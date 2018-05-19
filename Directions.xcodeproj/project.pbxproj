@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06435E2620B09D610074FBBF /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06435E2420B09D610074FBBF /* PreferencesWindow.swift */; };
+		06435E2720B09D610074FBBF /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06435E2520B09D610074FBBF /* PreferencesWindow.xib */; };
+		06435E2920B0B0E00074FBBF /* MyApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06435E2820B0B0E00074FBBF /* MyApplication.swift */; };
 		065BBCE620A796700050AB84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065BBCE520A796700050AB84 /* AppDelegate.swift */; };
 		065BBCE820A796710050AB84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 065BBCE720A796710050AB84 /* Assets.xcassets */; };
 		065BBCEB20A796710050AB84 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 065BBCE920A796710050AB84 /* MainMenu.xib */; };
 		065BBCF720A796710050AB84 /* DirectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065BBCF620A796710050AB84 /* DirectionsTests.swift */; };
 		065BBD0220A796710050AB84 /* DirectionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065BBD0120A796710050AB84 /* DirectionsUITests.swift */; };
+		065BBD1220A7A5660050AB84 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065BBD1120A7A5660050AB84 /* StatusMenuController.swift */; };
+		067CDFB320AD48CD002FC9BE /* DistanceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067CDFB220AD48CD002FC9BE /* DistanceAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06435E2420B09D610074FBBF /* PreferencesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
+		06435E2520B09D610074FBBF /* PreferencesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
+		06435E2820B0B0E00074FBBF /* MyApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApplication.swift; sourceTree = "<group>"; };
 		065BBCE220A796700050AB84 /* Directions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Directions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		065BBCE520A796700050AB84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		065BBCE720A796710050AB84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +52,8 @@
 		065BBCFD20A796710050AB84 /* DirectionsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DirectionsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		065BBD0120A796710050AB84 /* DirectionsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsUITests.swift; sourceTree = "<group>"; };
 		065BBD0320A796710050AB84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		065BBD1120A7A5660050AB84 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatusMenuController.swift; path = ../StatusMenuController.swift; sourceTree = "<group>"; };
+		067CDFB220AD48CD002FC9BE /* DistanceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +104,15 @@
 		065BBCE420A796700050AB84 /* Directions */ = {
 			isa = PBXGroup;
 			children = (
+				067CDFB220AD48CD002FC9BE /* DistanceAPI.swift */,
+				065BBD1120A7A5660050AB84 /* StatusMenuController.swift */,
 				065BBCE520A796700050AB84 /* AppDelegate.swift */,
 				065BBCE720A796710050AB84 /* Assets.xcassets */,
 				065BBCE920A796710050AB84 /* MainMenu.xib */,
+				06435E2420B09D610074FBBF /* PreferencesWindow.swift */,
+				06435E2520B09D610074FBBF /* PreferencesWindow.xib */,
 				065BBCEC20A796710050AB84 /* Info.plist */,
+				06435E2820B0B0E00074FBBF /* MyApplication.swift */,
 				065BBCED20A796710050AB84 /* Directions.entitlements */,
 			);
 			path = Directions;
@@ -189,6 +204,11 @@
 				TargetAttributes = {
 					065BBCE120A796700050AB84 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					065BBCF120A796710050AB84 = {
 						CreatedOnToolsVersion = 9.3;
@@ -226,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				065BBCE820A796710050AB84 /* Assets.xcassets in Resources */,
+				06435E2720B09D610074FBBF /* PreferencesWindow.xib in Resources */,
 				065BBCEB20A796710050AB84 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +272,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06435E2620B09D610074FBBF /* PreferencesWindow.swift in Sources */,
+				065BBD1220A7A5660050AB84 /* StatusMenuController.swift in Sources */,
+				067CDFB320AD48CD002FC9BE /* DistanceAPI.swift in Sources */,
+				06435E2920B0B0E00074FBBF /* MyApplication.swift in Sources */,
 				065BBCE620A796700050AB84 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
