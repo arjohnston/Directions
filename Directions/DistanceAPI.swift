@@ -20,7 +20,7 @@ struct DurationInTraffic: CustomStringConvertible {
 }
 
 class DistanceAPI {
-    let BASE_URL = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&departure_time=now"
+    let BASE_URL = "https://maps.googleapis.com/maps/api/directions/json?units=imperial&departure_time=now"
     
     func fetchDistance(origin: String, destination: String, success: @escaping (DurationInTraffic) -> Void) {
         let session = URLSession.shared
@@ -28,7 +28,7 @@ class DistanceAPI {
         let API_KEY = defaults.string(forKey: "apiKey") ?? ""
         let escapedOrigin = origin.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         let escapedDestination = destination.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        let url = URL(string: "\(BASE_URL)&origins=\(escapedOrigin!)&destinations=\(escapedDestination!)&key=\(API_KEY)")
+        let url = URL(string: "\(BASE_URL)&origin=\(escapedOrigin!)&destination=\(escapedDestination!)&key=\(API_KEY)")
         
         if API_KEY == "" {
             return
@@ -68,13 +68,12 @@ class DistanceAPI {
             return nil
         }
         
-        var distanceList = json["rows"] as! [JSONDict]
-        let distanceDict = distanceList[0]["elements"] as! [JSONDict]
-        let x = distanceDict[0]
-        let distanceInText = x["duration_in_traffic"]!["text"]
-        
-        let distance = DurationInTraffic(time: distanceInText as! String)
+        let jsonData = json["routes"] as! [JSONDict]
+        let legs = jsonData[0]["legs"] as! [JSONDict]
 
-        return distance
+        let summary = jsonData[0]["summary"] as! String
+        let duration = legs[0]["duration_in_traffic"]!["text"] as! String
+
+        return DurationInTraffic(time: "\(summary) - \(duration)")
     }
 }
