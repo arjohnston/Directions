@@ -15,6 +15,7 @@
                 <outlet property="timeSelection" destination="Q3o-Ts-J4O" id="Rlc-wp-gXV"/>
                 <outlet property="tollsCheckbox" destination="RIq-GA-lP3" id="PB0-8F-Ih7"/>
                 <outlet property="travelModeSelection" destination="cU4-vK-4DC" id="Bzj-HG-hCa"/>
+                <outlet property="updateIntervalSelection" destination="Wsq-P3-d2Q" id="YUI-0x-ddB"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -23,14 +24,14 @@
         <window title="API Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="258"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="318"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
             <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="258"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="318"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tls-d2-s3c">
-                        <rect key="frame" x="49" y="22" width="54" height="17"/>
+                        <rect key="frame" x="49" y="24" width="54" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="API Key:" id="fCz-pp-oGW">
                             <font key="font" metaFont="system"/>
@@ -39,7 +40,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="57M-Qj-fR2">
-                        <rect key="frame" x="114" y="20" width="316" height="22"/>
+                        <rect key="frame" x="114" y="22" width="316" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="key" drawsBackground="YES" id="FsO-AT-K5n">
                             <font key="font" metaFont="system"/>
@@ -117,7 +118,7 @@
                         </popUpButtonCell>
                     </popUpButton>
                     <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhE-n0-zsd">
-                        <rect key="frame" x="436" y="18" width="25" height="25"/>
+                        <rect key="frame" x="436" y="20" width="25" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kuf-K1-IA6">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -172,12 +173,40 @@
                             <datePickerElements key="datePickerElements" hour="YES" minute="YES"/>
                         </datePickerCell>
                     </datePicker>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="y4a-mN-9ak">
+                        <rect key="frame" x="12" y="251" width="456" height="5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </box>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="znq-Ry-Z1c">
+                        <rect key="frame" x="13" y="276" width="90" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Update Every:" id="0OK-hc-lcS">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wsq-P3-d2Q">
+                        <rect key="frame" x="112" y="271" width="112" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" title="15 min" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="oZ3-wt-xCd" id="6HR-GV-gTD">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" id="zxl-Ac-NqZ">
+                                <items>
+                                    <menuItem title="15 min" state="on" id="oZ3-wt-xCd"/>
+                                    <menuItem title="30 min" id="IU0-fs-Usz"/>
+                                    <menuItem title="60 min" id="oP8-pG-3IV"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                    </popUpButton>
                 </subviews>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="139" y="155"/>
+            <point key="canvasLocation" x="139" y="185"/>
         </window>
     </objects>
 </document>

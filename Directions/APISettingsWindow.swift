@@ -21,6 +21,7 @@ class APISettingsWindow: NSWindowController, NSWindowDelegate {
     @IBOutlet weak var timeSelection: NSDatePicker!
     @IBOutlet weak var departNowCheckbox: NSButton!
     @IBOutlet weak var apiKeyTextField: NSTextField!
+    @IBOutlet weak var updateIntervalSelection: NSPopUpButton!
     
     @IBAction func timeModeSelected(_ sender: NSPopUpButton) {
         let mode = timeModeSelection.indexOfSelectedItem
@@ -79,6 +80,7 @@ class APISettingsWindow: NSWindowController, NSWindowDelegate {
         NSApp.activate(ignoringOtherApps: true)
         
         let defaults = UserDefaults.standard
+        let intervalTime = defaults.integer(forKey: "intervalTime")
         let travelMode = defaults.integer(forKey: "travelMode")
         let tolls = defaults.integer(forKey: "tolls")
         let highway = defaults.integer(forKey: "highway")
@@ -87,6 +89,7 @@ class APISettingsWindow: NSWindowController, NSWindowDelegate {
         let departNow = defaults.integer(forKey: "departNow")
         let apiKey = defaults.string(forKey: "apiKey") ?? ""
 
+        updateIntervalSelection.selectItem(at: intervalTime)
         travelModeSelection.selectItem(at: travelMode)
         tollsCheckbox.state = NSControl.StateValue(tolls)
         highwayCheckbox.state = NSControl.StateValue(highway)
@@ -107,6 +110,7 @@ class APISettingsWindow: NSWindowController, NSWindowDelegate {
     
     func windowWillClose(_ notification: Notification) {
         let defaults = UserDefaults.standard
+        defaults.setValue(updateIntervalSelection.indexOfSelectedItem, forKey: "intervalTime")
         defaults.setValue(travelModeSelection.indexOfSelectedItem, forKey: "travelMode")
         defaults.setValue(tollsCheckbox.state.rawValue, forKey: "tolls")
         defaults.setValue(highwayCheckbox.state.rawValue, forKey: "highway")
@@ -115,17 +119,10 @@ class APISettingsWindow: NSWindowController, NSWindowDelegate {
         defaults.setValue(departNowCheckbox.state.rawValue, forKey: "departNow")
         defaults.setValue(apiKeyTextField.stringValue, forKey: "apiKey")
         
-        // use today's date with selected time
-//        print(timeSelection.dateValue)
-//        defaults.setValue(timeSelection.dateValue, forKey: "timeSelected")
-        
         let calendar: NSCalendar! = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
         let now: NSDate! = NSDate()
-//        let dateValue = timeSelection.dateValue
         let hours = calendar.component(.hour, from: timeSelection.dateValue)
         let minutes = calendar.component(.minute, from: timeSelection.dateValue)
-//        print(calendar.component(.hour, from: timeSelection.dateValue))
-//        print(calendar.component(.minute, from: timeSelection.dateValue))
         
         let date = calendar.date(bySettingHour: hours, minute: minutes, second: 0, of: now as Date, options: NSCalendar.Options.matchFirst)!
         

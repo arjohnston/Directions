@@ -68,7 +68,7 @@ class StatusMenuController: NSObject, LocationsWindowDelegate, APISettingsWindow
         apiSettingsWindow.showWindow(nil)
     }
     
-    func updateDistance() {
+    @objc func updateDistance() {
         let defaults = UserDefaults.standard
         distanceAPI.fetchDistance(
             origin: defaults.string(forKey: "origin") ?? DEFAULT_ORIGIN,
@@ -78,6 +78,23 @@ class StatusMenuController: NSObject, LocationsWindowDelegate, APISettingsWindow
                     self.statusItem.title = distance.description
                 }
         })
+
+        let intervalSelection = defaults.integer(forKey: "intervalTimer")
+        var timer = 60.0 * 15.0
+        switch intervalSelection {
+        case 0:
+            timer = 60.0 * 15.0 // 15 minutes
+        case 1:
+            timer = 60.0 * 30.0 // 30 minutes
+        case 2:
+            timer = 60.0 * 60.0 // 1 hour
+        default:
+            break
+        }
+        
+        // Reset any requests and set delay
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
+        perform(#selector(updateDistance), with: nil, afterDelay: timer)
     }
     
     @IBAction func updateClicked(_ sender: NSMenuItem) {
