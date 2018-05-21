@@ -1,5 +1,5 @@
 //
-//  PreferencesWindow.swift
+//  LocationsWindow.swift
 //  Directions
 //
 //  Created by Andrew Johnston on 5/19/18.
@@ -8,19 +8,19 @@
 
 import Cocoa
 
-protocol PreferencesWindowDelegate {
-    func preferencesDidUpdate()
+protocol LocationsWindowDelegate {
+    func locationsDidUpdate()
 }
 
-class PreferencesWindow: NSWindowController, NSWindowDelegate {
+class LocationsWindow: NSWindowController, NSWindowDelegate {
     @IBOutlet weak var originTextField: NSTextField!
     @IBOutlet weak var destinationTextField: NSTextField!
     @IBOutlet weak var apiKeyTextField: NSTextField!
     
-    var delegate: PreferencesWindowDelegate?
+    var delegate: LocationsWindowDelegate?
     
     override var windowNibName : NSNib.Name! {
-        return NSNib.Name("PreferencesWindow")
+        return NSNib.Name("LocationsWindow")
     }
     
     override func windowDidLoad() {
@@ -33,18 +33,15 @@ class PreferencesWindow: NSWindowController, NSWindowDelegate {
         let defaults = UserDefaults.standard
         let origin = defaults.string(forKey: "origin") ?? DEFAULT_ORIGIN
         let destination = defaults.string(forKey: "destination") ?? DEFAULT_DESTINATION
-        let apiKey = defaults.string(forKey: "apiKey") ?? ""
         originTextField.stringValue = origin
         destinationTextField.stringValue = destination
-        apiKeyTextField.stringValue = apiKey
     }
     
     func windowWillClose(_ notification: Notification) {
         let defaults = UserDefaults.standard
         defaults.setValue(originTextField.stringValue, forKey: "origin")
         defaults.setValue(destinationTextField.stringValue, forKey: "destination")
-        defaults.setValue(apiKeyTextField.stringValue, forKey: "apiKey")
         
-        delegate?.preferencesDidUpdate()
+        delegate?.locationsDidUpdate()
     }
 }

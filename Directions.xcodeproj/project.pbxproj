@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06435E2620B09D610074FBBF /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06435E2420B09D610074FBBF /* PreferencesWindow.swift */; };
-		06435E2720B09D610074FBBF /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06435E2520B09D610074FBBF /* PreferencesWindow.xib */; };
+		0624BD4020B241DD00106F7A /* APISettingsHelpWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0624BD3E20B241DD00106F7A /* APISettingsHelpWindow.swift */; };
+		0624BD4120B241DD00106F7A /* APISettingsHelpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0624BD3F20B241DD00106F7A /* APISettingsHelpWindow.xib */; };
+		06435E2620B09D610074FBBF /* LocationsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06435E2420B09D610074FBBF /* LocationsWindow.swift */; };
+		06435E2720B09D610074FBBF /* LocationsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06435E2520B09D610074FBBF /* LocationsWindow.xib */; };
 		06435E2920B0B0E00074FBBF /* MyApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06435E2820B0B0E00074FBBF /* MyApplication.swift */; };
+		06435E2C20B0D0280074FBBF /* APISettingsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06435E2A20B0D0280074FBBF /* APISettingsWindow.swift */; };
+		06435E2D20B0D0280074FBBF /* APISettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06435E2B20B0D0280074FBBF /* APISettingsWindow.xib */; };
 		065BBCE620A796700050AB84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065BBCE520A796700050AB84 /* AppDelegate.swift */; };
 		065BBCE820A796710050AB84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 065BBCE720A796710050AB84 /* Assets.xcassets */; };
 		065BBCEB20A796710050AB84 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 065BBCE920A796710050AB84 /* MainMenu.xib */; };
@@ -37,9 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06435E2420B09D610074FBBF /* PreferencesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
-		06435E2520B09D610074FBBF /* PreferencesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
+		0624BD3E20B241DD00106F7A /* APISettingsHelpWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISettingsHelpWindow.swift; sourceTree = "<group>"; };
+		0624BD3F20B241DD00106F7A /* APISettingsHelpWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APISettingsHelpWindow.xib; sourceTree = "<group>"; };
+		06435E2420B09D610074FBBF /* LocationsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsWindow.swift; sourceTree = "<group>"; };
+		06435E2520B09D610074FBBF /* LocationsWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationsWindow.xib; sourceTree = "<group>"; };
 		06435E2820B0B0E00074FBBF /* MyApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApplication.swift; sourceTree = "<group>"; };
+		06435E2A20B0D0280074FBBF /* APISettingsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISettingsWindow.swift; sourceTree = "<group>"; };
+		06435E2B20B0D0280074FBBF /* APISettingsWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APISettingsWindow.xib; sourceTree = "<group>"; };
 		065BBCE220A796700050AB84 /* Directions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Directions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		065BBCE520A796700050AB84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		065BBCE720A796710050AB84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,8 +117,12 @@
 				065BBCE520A796700050AB84 /* AppDelegate.swift */,
 				065BBCE720A796710050AB84 /* Assets.xcassets */,
 				065BBCE920A796710050AB84 /* MainMenu.xib */,
-				06435E2420B09D610074FBBF /* PreferencesWindow.swift */,
-				06435E2520B09D610074FBBF /* PreferencesWindow.xib */,
+				06435E2420B09D610074FBBF /* LocationsWindow.swift */,
+				06435E2520B09D610074FBBF /* LocationsWindow.xib */,
+				06435E2A20B0D0280074FBBF /* APISettingsWindow.swift */,
+				06435E2B20B0D0280074FBBF /* APISettingsWindow.xib */,
+				0624BD3E20B241DD00106F7A /* APISettingsHelpWindow.swift */,
+				0624BD3F20B241DD00106F7A /* APISettingsHelpWindow.xib */,
 				065BBCEC20A796710050AB84 /* Info.plist */,
 				06435E2820B0B0E00074FBBF /* MyApplication.swift */,
 				065BBCED20A796710050AB84 /* Directions.entitlements */,
@@ -246,7 +258,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				065BBCE820A796710050AB84 /* Assets.xcassets in Resources */,
-				06435E2720B09D610074FBBF /* PreferencesWindow.xib in Resources */,
+				06435E2D20B0D0280074FBBF /* APISettingsWindow.xib in Resources */,
+				0624BD4120B241DD00106F7A /* APISettingsHelpWindow.xib in Resources */,
+				06435E2720B09D610074FBBF /* LocationsWindow.xib in Resources */,
 				065BBCEB20A796710050AB84 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,8 +286,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06435E2620B09D610074FBBF /* PreferencesWindow.swift in Sources */,
+				06435E2620B09D610074FBBF /* LocationsWindow.swift in Sources */,
+				06435E2C20B0D0280074FBBF /* APISettingsWindow.swift in Sources */,
 				065BBD1220A7A5660050AB84 /* StatusMenuController.swift in Sources */,
+				0624BD4020B241DD00106F7A /* APISettingsHelpWindow.swift in Sources */,
 				067CDFB320AD48CD002FC9BE /* DistanceAPI.swift in Sources */,
 				06435E2920B0B0E00074FBBF /* MyApplication.swift in Sources */,
 				065BBCE620A796700050AB84 /* AppDelegate.swift in Sources */,

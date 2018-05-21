@@ -15,6 +15,7 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="PFD-qa-B1i" customClass="StatusMenuController" customModule="Directions" customModuleProvider="target">
             <connections>
+                <outlet property="bwIcon" destination="TYD-cs-wp8" id="jmE-G0-6Dm"/>
                 <outlet property="statusMenu" destination="KXk-9g-aww" id="6jR-de-Qyi"/>
             </connections>
         </customObject>
@@ -27,11 +28,31 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="Ki5-FE-p6l"/>
-                <menuItem title="Preferences" id="yLM-TL-ykZ">
+                <menuItem title="Preferences" id="R0J-d5-7E3">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="preferencesClicked:" target="PFD-qa-B1i" id="0b5-ux-sGn"/>
-                    </connections>
+                    <menu key="submenu" title="Preferences" id="hoM-Mf-PiB">
+                        <items>
+                            <menuItem title="Black &amp; White Icon" id="TYD-cs-wp8">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="toggleBWIconClicked:" target="PFD-qa-B1i" id="V3x-1n-1Aq"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="9vj-9B-JoK"/>
+                            <menuItem title="Locations" id="7Wo-UF-VBe">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="locationsClicked:" target="PFD-qa-B1i" id="UUw-7v-BhS"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="API Settings" id="hzc-IY-E5S">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="apiSettingsClicked:" target="PFD-qa-B1i" id="efZ-tb-G3N"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="I9Y-Df-IJB"/>
                 <menuItem title="Quit" id="k5a-IE-yzh">
@@ -41,7 +62,27 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="-33" y="108"/>
+            <point key="canvasLocation" x="-33" y="107.5"/>
         </menu>
+        <menuItem title="API Settings" id="bls-R7-0EG">
+            <modifierMask key="keyEquivalentModifierMask"/>
+        </menuItem>
+        <menu id="VMz-1V-niZ">
+            <items>
+                <menuItem title="Item 1" id="qOm-fO-A71">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Item 2" id="NX4-I5-RTa">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Item 3" id="8SC-sH-uvO">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="62" y="161"/>
+        </menu>
+        <menuItem title="Item" id="t1w-8l-i0d">
+            <modifierMask key="keyEquivalentModifierMask"/>
+        </menuItem>
     </objects>
 </document>
