@@ -21,6 +21,7 @@
 		065BBD0220A796710050AB84 /* DirectionsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065BBD0120A796710050AB84 /* DirectionsUITests.swift */; };
 		065BBD1220A7A5660050AB84 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065BBD1120A7A5660050AB84 /* StatusMenuController.swift */; };
 		067CDFB320AD48CD002FC9BE /* DistanceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067CDFB220AD48CD002FC9BE /* DistanceAPI.swift */; };
+		06EA21A720B38A6300D045E4 /* SelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06EA21A620B38A6300D045E4 /* SelectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		065BBD0320A796710050AB84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		065BBD1120A7A5660050AB84 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatusMenuController.swift; path = ../StatusMenuController.swift; sourceTree = "<group>"; };
 		067CDFB220AD48CD002FC9BE /* DistanceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceAPI.swift; sourceTree = "<group>"; };
+		06EA21A620B38A6300D045E4 /* SelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				065BBCE520A796700050AB84 /* AppDelegate.swift */,
 				065BBCE720A796710050AB84 /* Assets.xcassets */,
 				065BBCE920A796710050AB84 /* MainMenu.xib */,
+				06EA21A620B38A6300D045E4 /* SelectView.swift */,
 				06435E2420B09D610074FBBF /* LocationsWindow.swift */,
 				06435E2520B09D610074FBBF /* LocationsWindow.xib */,
 				06435E2A20B0D0280074FBBF /* APISettingsWindow.swift */,
@@ -292,6 +295,7 @@
 				0624BD4020B241DD00106F7A /* APISettingsHelpWindow.swift in Sources */,
 				067CDFB320AD48CD002FC9BE /* DistanceAPI.swift in Sources */,
 				06435E2920B0B0E00074FBBF /* MyApplication.swift in Sources */,
+				06EA21A720B38A6300D045E4 /* SelectView.swift in Sources */,
 				065BBCE620A796700050AB84 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

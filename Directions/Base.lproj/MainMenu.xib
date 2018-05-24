@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -16,6 +17,7 @@
         <customObject id="PFD-qa-B1i" customClass="StatusMenuController" customModule="Directions" customModuleProvider="target">
             <connections>
                 <outlet property="bwIcon" destination="TYD-cs-wp8" id="jmE-G0-6Dm"/>
+                <outlet property="selectView" destination="iqb-jx-Bwa" id="Og3-Wz-wAr"/>
                 <outlet property="statusMenu" destination="KXk-9g-aww" id="6jR-de-Qyi"/>
             </connections>
         </customObject>
@@ -26,6 +28,10 @@
                     <connections>
                         <action selector="updateClicked:" target="PFD-qa-B1i" id="4UE-le-zkI"/>
                     </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="pT1-QD-XHr"/>
+                <menuItem title="Select" id="YNv-0R-Ppg">
+                    <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="Ki5-FE-p6l"/>
                 <menuItem title="Preferences" id="R0J-d5-7E3">
@@ -84,5 +90,66 @@
         <menuItem title="Item" id="t1w-8l-i0d">
             <modifierMask key="keyEquivalentModifierMask"/>
         </menuItem>
+        <customView id="iqb-jx-Bwa" customClass="SelectView" customModule="Directions" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="222" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WgO-aH-OS0">
+                    <rect key="frame" x="22" y="39" width="39" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="From:" id="Kqa-zA-QqO">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PYN-0b-hXN">
+                    <rect key="frame" x="127" y="39" width="23" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="To:" id="sgf-sc-96d">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uf8-08-lyg">
+                    <rect key="frame" x="12" y="9" width="95" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="Home" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="9LU-0B-Hbc" id="dEg-k5-tuv">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="be5-Dz-8a2">
+                            <items>
+                                <menuItem title="Home" state="on" keyEquivalent="H" id="9LU-0B-Hbc">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
+                                <menuItem title="Item 2" id="Nao-jP-Lax"/>
+                                <menuItem title="Item 3" id="Lbi-Bw-FVp"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6NC-M9-liy">
+                    <rect key="frame" x="116" y="9" width="95" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="Work" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="3jW-OD-jGN" id="5Y2-bg-h4a">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="b8i-du-hC2">
+                            <items>
+                                <menuItem title="Work" state="on" id="3jW-OD-jGN"/>
+                                <menuItem title="Item 2" id="G05-k4-lek"/>
+                                <menuItem title="Item 3" id="pmv-Il-6Pj"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+            </subviews>
+            <connections>
+                <outlet property="fromSelection" destination="Uf8-08-lyg" id="fm5-D4-Gwh"/>
+                <outlet property="toSelection" destination="6NC-M9-liy" id="2nY-Mw-IPf"/>
+            </connections>
+            <point key="canvasLocation" x="-18" y="306"/>
+        </customView>
     </objects>
 </document>

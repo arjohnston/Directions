@@ -13,6 +13,9 @@ let DEFAULT_DESTINATION = "San Francisco, CA"
 
 class StatusMenuController: NSObject, LocationsWindowDelegate, APISettingsWindowDelegate {
     @IBOutlet weak var statusMenu: NSMenu!
+    @IBOutlet weak var selectView: SelectView!
+    var selectMenuItem: NSMenuItem!
+    
     @IBOutlet weak var bwIcon: NSMenuItem!
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -38,6 +41,9 @@ class StatusMenuController: NSObject, LocationsWindowDelegate, APISettingsWindow
         
         apiSettingsWindow = APISettingsWindow()
         apiSettingsWindow.delegate = self
+        
+        selectMenuItem = statusMenu.item(withTitle: "Select")
+        selectMenuItem.view = selectView
         
         updateDistance()
     }

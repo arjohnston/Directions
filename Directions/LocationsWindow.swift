@@ -12,7 +12,11 @@ protocol LocationsWindowDelegate {
     func locationsDidUpdate()
 }
 
-class LocationsWindow: NSWindowController, NSWindowDelegate {
+class LocationsWindow: NSWindowController, NSWindowDelegate, NSTableViewDataSource {
+    
+    let label:[String] = ["Home", "Work"]
+    let address:[String] = ["San Jose, CA", "San Francisco, CA"]
+
     @IBOutlet weak var originTextField: NSTextField!
     @IBOutlet weak var destinationTextField: NSTextField!
     @IBOutlet weak var apiKeyTextField: NSTextField!
@@ -36,6 +40,7 @@ class LocationsWindow: NSWindowController, NSWindowDelegate {
         originTextField.stringValue = origin
         destinationTextField.stringValue = destination
     }
+
     
     func windowWillClose(_ notification: Notification) {
         let defaults = UserDefaults.standard
@@ -44,4 +49,18 @@ class LocationsWindow: NSWindowController, NSWindowDelegate {
         
         delegate?.locationsDidUpdate()
     }
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return label.count
+    }
+
+    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
+        if tableColumn?.identifier.rawValue == "label" {
+            return label[row]
+        } else {
+            return address[row]
+        }
+    }
 }
+
+
