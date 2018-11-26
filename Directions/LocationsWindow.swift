@@ -13,9 +13,9 @@ protocol LocationsWindowDelegate {
 }
 
 class LocationsWindow: NSWindowController, NSWindowDelegate, NSTableViewDataSource {
-    
-    let label:[String] = ["Home", "Work"]
-    let address:[String] = ["San Jose, CA", "San Francisco, CA"]
+//    let label: [String] = UserDefaults.standard.array(forKey: "label") as? [String] ?? ["Home", "Work"]
+//    let address: [String] = UserDefaults.standard.array(forKey: "address") as? [String] ?? ["San Jose, CA", "San Francisco, CA"]
+    let tableViewData = [["firstName":"John","lastName":"Doe","emailId":"john.doe@knowstack.com"],["firstName":"Jane","lastName":"Doe","emailId":"jane.doe@knowstack.com"]]
 
     @IBOutlet weak var originTextField: NSTextField!
     @IBOutlet weak var destinationTextField: NSTextField!
@@ -46,21 +46,37 @@ class LocationsWindow: NSWindowController, NSWindowDelegate, NSTableViewDataSour
         let defaults = UserDefaults.standard
         defaults.setValue(originTextField.stringValue, forKey: "origin")
         defaults.setValue(destinationTextField.stringValue, forKey: "destination")
+//        defaults.setValue(label, forKey: "label")
+//        defaults.setValue(address, forKey: "address")
         
         delegate?.locationsDidUpdate()
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return label.count
+//        return label.count
+        return tableViewData.count
     }
 
-    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-        if tableColumn?.identifier.rawValue == "label" {
-            return label[row]
-        } else {
-            return address[row]
-        }
+//    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
+//        if tableColumn?.identifier.rawValue == "label" {
+//            return label[row]
+//        } else {
+//            return address[row]
+//        }
+//    }
+    
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView?{
+        var result:NSTableCellView
+        result = tableView.makeView(withIdentifier: (tableColumn?.identifier)!, owner: self) as! NSTableCellView
+//        result.textField?.stringValue = tableViewData[row][(tableColumn?.identifier)!]!
+        return result
     }
+    
+//    @IBAction func addRow(_ sender: Any) {
+//        tableView.beginUpdates()
+//        tableView.insertRows(at: IndexSet(integer: values.count - 1), withAnimation: .effectFade)
+//        tableView.endUpdates()
+//    }
 }
 
 
